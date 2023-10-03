@@ -1,0 +1,15 @@
+.navlink{
+    display: inline-block;
+}
+.navlink::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: rgb(10, 150, 160);
+    transition: 300ms;
+}
+
+.navlink:hover:after {
+    width: 100%;
+}

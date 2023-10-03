@@ -1,0 +1,40 @@
+.Log_form {
+  background-color: azure;
+  width: 40%;
+  margin-top: 100px;
+  border-radius: 6px;
+  position: absolute;
+  margin-left: 30%;
+}
+
+.form-control input {
+  width: 50%;
+  margin-left: 20%;
+  outline: none;
+  display: block;
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #b8c2c0;
+}
+.check{
+  margin-left: 2%;
+}
+
+.log-button{
+  border: none;
+  border-radius: 2px;
+  background-color: #94a3a0;
+  height: 50px;
+  width: 70px;
+}
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
