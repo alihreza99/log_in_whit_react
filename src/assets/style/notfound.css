@@ -1,16 +1,17 @@
-.notfount{
-    margin-top: 150px;
-    margin-left: 10%;
-    width: 600px;
+.notfount {
+  margin-top: 150px;
+  margin-left: 10%;
+  width: 600px;
 }
-.notfount h1,p{
-    color:rgb(166, 216, 216);
+.notfount h1,
+p {
+  color: rgb(166, 216, 216);
 }
-.link{
-    color: azure;
-    text-decoration: none;
+.link {
+  color: azure;
+  text-decoration: none;
 }
-.link:hover{
-    font-size:larger;
-    color: darkgrey;
+.link:hover {
+  font-size: larger;
+  color: darkgrey;
 }

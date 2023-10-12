@@ -1,9 +1,8 @@
 .load {
-position: absolute;
+  position: absolute;
   color: "#0000FF";
   height: 200px;
   width: 150px;
   top: 40%;
   left: 45%;
-
 }

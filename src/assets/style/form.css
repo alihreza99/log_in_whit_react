@@ -6,6 +6,9 @@
   position: absolute;
   margin-left: 30%;
 }
+.Log_form p {
+  color: red;
+}
 
 .form-control input {
   width: 50%;
@@ -17,24 +20,38 @@
   margin-bottom: 10px;
   border: none;
   border-radius: 20px;
-  background: #b8c2c0;
+  background: #1f616d;
+  color: azure;
 }
-.check{
+.check {
   margin-left: 2%;
 }
 
-.log-button{
+.log-button {
   border: none;
-  border-radius: 2px;
-  background-color: #94a3a0;
+  border-radius: 5px;
+  background-color: #1f616d;
+  color: whitesmoke;
   height: 50px;
   width: 70px;
 }
-input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.9;
+}
+.radio-parent {
+  margin-left: 10px;
+}
+
+label > sup {
+  color: red;
 }

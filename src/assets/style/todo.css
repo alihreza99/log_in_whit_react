@@ -13,7 +13,11 @@ body {
 button {
   cursor: pointer;
 }
-
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #container {
   background-color: azure;
   width: 40%;
@@ -45,7 +49,6 @@ h1 {
 .button-text {
   position: absolute;
   font-size: smaller;
-  top: 0.1mm;
 }
 
 #book-list ul,

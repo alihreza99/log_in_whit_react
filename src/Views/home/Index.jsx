@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import Todo from "../ListItem/Todo";
+import Todo from "./Todo";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import toast, { Toaster, useToaster } from 'react-hot-toast';
-//import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 export default function Todolist() {
   const [items, setItems] = useState([]);
@@ -13,8 +12,7 @@ export default function Todolist() {
   const [show2, setShow2] = useState(false);
 
   const focus = useRef();
-  
-  
+
   useState(() => {
     if (localStorage.getItem("localTasks")) {
       setItems(JSON.parse(localStorage.getItem("localTasks")));
@@ -33,7 +31,6 @@ export default function Todolist() {
     event.preventDefault();
 
     if (input.trim() !== "") {
-      
       let newobject = {
         title: input,
         id: items.length + 1,
@@ -42,24 +39,23 @@ export default function Todolist() {
       setItems([...items, newobject]);
       setInput("");
       localStorage.setItem("localTasks", JSON.stringify([...items, newobject]));
-      toast('Successfully created', {
+      toast("Successfully created", {
         duration: 1000,
-        position: 'top-center',
-        style: {background:"black",color:"white"},
-        className: '',
+        position: "top-center",
+        style: { background: "black", color: "white" },
+        className: "",
         iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
+          primary: "#000",
+          secondary: "#fff",
         },
-      
+
         ariaProps: {
-          role: 'status',
-          'aria-live': 'polite',
+          role: "status",
+          "aria-live": "polite",
         },
       });
     } else {
       setInput("");
-      
     }
   }
 
@@ -68,14 +64,12 @@ export default function Todolist() {
     const deleted = items.filter((f) => f.title !== itemtitle);
     setItems(deleted);
     localStorage.setItem("localTasks", JSON.stringify(deleted));
-
   }
 
   function deleteall() {
     setShow2(false);
     setItems([]);
     localStorage.removeItem("localTasks");
-    
   }
 
   const handleClose = () => setShow(false);
@@ -89,19 +83,19 @@ export default function Todolist() {
 
   function handleShow2() {
     if (items.length === 0) {
-      toast.error('Your list is empty!!', {
+      toast.error("Your list is empty!!", {
         duration: 1000,
-        position: 'top-center',
-        style: {background:"black",color:"white"},
-        className: '',
+        position: "top-center",
+        style: { background: "black", color: "white" },
+        className: "",
         iconTheme: {
-          primary: '#000',
-          secondary: '#fff',
+          primary: "#000",
+          secondary: "#fff",
         },
-      
+
         ariaProps: {
-          role: 'status',
-          'aria-live': 'polite',
+          role: "status",
+          "aria-live": "polite",
         },
       });
     } else {
@@ -110,23 +104,19 @@ export default function Todolist() {
   }
   return (
     <>
-    <Toaster/>
       <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header
-          closeButton
-          style={{ backgroundColor: "black", color: "white" }}
-        >
+        <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>warning</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ backgroundColor: "black", color: "white" }}>
+        <Modal.Body className="bg-dark text-white">
           Do you want to delete this item?
         </Modal.Body>
-        <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
+        <Modal.Footer className="bg-dark text-white">
           <Button onClick={handleClose} variant="secondary">
             No
           </Button>
