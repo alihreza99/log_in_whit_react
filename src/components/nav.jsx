@@ -26,7 +26,29 @@ export default function App() {
               Log In
             </Link>
           </Nav.Link>
+          <Nav.Link className="navlink">
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to={"/kharid"}
+            >
+              list kala
+            </Link>
+          </Nav.Link>
         </Nav>
+        <Nav.Link className="navlink">
+          <Link style={{ color: "white", textDecoration: "none" }} to={"/shop"}>
+            <Navbar.Collapse className="justify-content-end">
+              <Navbar.Text>
+                <i
+                  className="fa-solid fa-cart-shopping"
+                  style={{ color: " #d3d7df", position: "relative" }}
+                  >
+                </i>
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Link>
+        </Nav.Link>
+        <Navbar.Toggle />
       </Container>
     </Navbar>
   );

@@ -11,6 +11,10 @@ export default function NotFound() {
       <Link className="link" to="/log">
         Blog
       </Link>
+      <br/>
+      <Link className="link" to="/kharid">
+        list kala
+      </Link>
     </div>
   );
 }

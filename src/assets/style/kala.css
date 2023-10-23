@@ -1,0 +1,216 @@
+body {
+  width: 100%;
+  position: relative;
+}
+.pedar {
+  justify-content: center;
+  position: absolute;
+  display: grid;
+  column-gap: 3%;
+  grid-template-columns: 30% 30% 30%;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5%;
+  height: 80%;
+}
+
+.item-kharid {
+  background-color: rgba(222, 227, 228, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 10px;
+  text-align: center;
+  height: 450px;
+  overflow-x: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.item-kharid img {
+  width: 70%;
+  height: 230px;
+  border-radius: 10px;
+  mix-blend-mode: multiply;
+}
+.item-kharid span {
+  font-size: medium;
+  color: rgb(9, 55, 70);
+}
+
+.item-kharid button {
+  width: 30%;
+  height: 50px;
+  border-radius: 5%;
+  border: none;
+}
+
+.btns {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.deletekala {
+  background-color: brown;
+}
+
+.buykala {
+  background-color: rgb(31, 158, 31);
+}
+
+.infokala {
+  background-color: rgb(3, 3, 3);
+  color: aliceblue;
+}
+
+.pagination {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  bottom: 0px;
+}
+.link {
+  color: "white";
+  text-decoration: "none";
+  background-color: #2196f3;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+.link:hover {
+  font-size: medium;
+  color: black;
+}
+.moreinfo {
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 15%;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.moreinfo img {
+  margin-top: 20px;
+  width: 50%;
+  height: 70%;
+  mix-blend-mode: multiply;
+}
+
+.child {
+  position: absolute;
+  margin-top: 20%;
+}
+
+.backtolist {
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  color: aliceblue;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.description{
+  text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .pedar {
+    margin-top: 50px;
+    width: 100%;
+    background-color: rgb(11, 1, 70) !important;
+    padding: 10px;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    background-color: #2196f3;
+    padding: 10px;
+    position: absolute;
+  }
+  .item-kharid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 10px;
+    text-align: center;
+    height: 430px;
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: relative;
+  }
+  .item-kharid span {
+    font-size: small;
+    color: rgb(9, 55, 70);
+  }
+  .btns Button {
+    font-size: smaller;
+  }
+  .pagination {
+    bottom: -5px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .item-kharid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 600px;
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: relative;
+  }
+  .pagination {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    bottom: 50px;
+  }
+}
+
+@media only screen and (min-height: 1600px) {
+  .item-kharid {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 600px;
+    overflow-x: hidden;
+    border-radius: 10px;
+    position: relative;
+  }
+  .pagination {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    bottom: 50px;
+  }
+}

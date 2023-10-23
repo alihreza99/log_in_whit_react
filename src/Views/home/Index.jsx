@@ -66,6 +66,7 @@ export default function Todolist() {
     localStorage.setItem("localTasks", JSON.stringify(deleted));
   }
 
+  
   function deleteall() {
     setShow2(false);
     setItems([]);
@@ -163,8 +164,14 @@ export default function Todolist() {
                 empty
               </h3>
             )}
-            {items.map((item) => {
-              return <Todo title={item.title} deletehandler={handleShow} />;
+            {items.map((item, index) => {
+              return (
+                <Todo
+                  title={item.title}
+                  deletehandler={handleShow}
+                  key={index}
+                />
+              );
             })}
           </ul>
         </div>
