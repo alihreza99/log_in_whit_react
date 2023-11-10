@@ -3,14 +3,13 @@ import Todo from "./Todo";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import toast from "react-hot-toast";
-
+import Spin from "./../../components/spinner";
 export default function Todolist() {
   const [items, setItems] = useState([]);
   const [input, setInput] = useState("");
   const [itemtitle, setItemtitle] = useState("");
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
-
   const focus = useRef();
 
   useState(() => {
@@ -39,7 +38,7 @@ export default function Todolist() {
       setItems([...items, newobject]);
       setInput("");
       localStorage.setItem("localTasks", JSON.stringify([...items, newobject]));
-      toast("Successfully created", {
+      toast("ایتم با موفقیت اضافه شد", {
         duration: 1000,
         position: "top-center",
         style: { background: "black", color: "white" },
@@ -66,7 +65,6 @@ export default function Todolist() {
     localStorage.setItem("localTasks", JSON.stringify(deleted));
   }
 
-  
   function deleteall() {
     setShow2(false);
     setItems([]);
@@ -84,7 +82,7 @@ export default function Todolist() {
 
   function handleShow2() {
     if (items.length === 0) {
-      toast.error("Your list is empty!!", {
+      toast.error("!! لیست شما خالی است", {
         duration: 1000,
         position: "top-center",
         style: { background: "black", color: "white" },
@@ -106,44 +104,45 @@ export default function Todolist() {
   return (
     <>
       <Modal
+        className="modal"
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton className="bg-dark text-white">
-          <Modal.Title>warning</Modal.Title>
+        <Modal.Header className="bg-dark text-white">
+          <Modal.Title>اخطار</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark text-white">
-          Do you want to delete this item?
+          میخواهید این ایتم را حذف کنید؟
         </Modal.Body>
         <Modal.Footer className="bg-dark text-white">
           <Button onClick={handleClose} variant="secondary">
-            No
+            خیر
           </Button>
           <Button onClick={deleteoneitem} variant="primary">
-            Yes
+            بله
           </Button>
         </Modal.Footer>
       </Modal>
 
       <Modal show={show2} onHide={handleClose2} keyboard={false}>
-        <Modal.Header closeButton>
-          <Modal.Title>warning</Modal.Title>
+        <Modal.Header>
+          <Modal.Title>اخطار</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Do you want to delete items?</Modal.Body>
+        <Modal.Body>میخواهید همه ایتم ها را حذف کنید؟</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose2}>
-            No
+            خیر
           </Button>
           <Button variant="primary" onClick={deleteall}>
-            Yes
+            بله
           </Button>
         </Modal.Footer>
       </Modal>
 
       <div id="container">
-        <h1 className="title">Todo App</h1>
+        <h1 className="title">لیست کار ها</h1>
         <form id="add-book" onSubmit={additem}>
           <input
             ref={focus}
@@ -160,8 +159,8 @@ export default function Todolist() {
           <ul>
             {items.length === 0 && (
               <h3 id="child">
-                <i className="fa-solid fa-triangle-exclamation"></i> list is
-                empty
+                <i className="fa-solid fa-triangle-exclamation"></i> لیست خالی
+                است
               </h3>
             )}
             {items.map((item, index) => {
@@ -178,14 +177,14 @@ export default function Todolist() {
 
         <div className="info">
           <div className="info-text">
-            <p className="info-text-item">You have </p>
+            <p className="info-text-item">شما </p>
             <p className="info-text-item" id="number">
               {items.length}
             </p>
-            <p className="info-text-item"> pending tasks</p>
+            <p className="info-text-item"> تسک انجام نشده دارید</p>
           </div>
           <button onClick={handleShow2} id="clear-all">
-            Clear All
+            پاک کردن همه
           </button>
         </div>
       </div>

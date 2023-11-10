@@ -13,11 +13,11 @@ export default function BasicExample(props) {
       <br />
       <span className="category">{props.categorykala}</span>
       <br />
-      <span className="price">price = {props.pricekala}</span>
+      <span className="price">قیمت = {props.pricekala}</span>
       <br />
       <div>
         <Link className="list backtolist" to={{ pathname: `/kharid` }}>
-          back
+          برگشت
         </Link>
       </div>
     </div>

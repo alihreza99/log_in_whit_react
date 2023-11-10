@@ -10,27 +10,58 @@ body {
   grid-template-columns: 30% 30% 30%;
   padding: 10px;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 60px;
   height: 80%;
 }
 
 .item-kharid {
-  background-color: rgba(222, 227, 228, 0.8);
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 10px;
   text-align: center;
-  height: 450px;
+  height: 550px;
   overflow-x: hidden;
   border-radius: 10px;
   position: relative;
 }
-
+.page-item1 {
+  position: absolute;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.9);
+  color: rgb(196, 219, 196);
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 5px;
+  border: none;
+  border-radius: 50px;
+  animation: prevPage 0.5s forwards;
+}
+.page-item2 {
+  position: absolute;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.9);
+  color: rgb(196, 219, 196);
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  right: 5px;
+  border: none;
+  border-radius: 50px;
+  animation: nextPage 0.5s forwards;
+}
 .item-kharid img {
-  width: 70%;
-  height: 230px;
+  width: 60%;
+  height: 210px;
   border-radius: 10px;
   mix-blend-mode: multiply;
+}
+.name b {
+  color: #2d2b30;
+}
+.price {
+  color: rgb(32, 93, 95);
 }
 .item-kharid span {
   font-size: medium;
@@ -47,12 +78,14 @@ body {
 .btns {
   position: absolute;
   width: 100%;
-  bottom: 10px;
+  bottom: 0px;
   left: 0%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
+  background-color: #b2bdc7;
+  height: 70px;
 }
 
 .deletekala {
@@ -79,9 +112,10 @@ body {
 .link {
   color: "white";
   text-decoration: "none";
-  background-color: #2196f3;
+  background-color: #585c5f;
   width: 30%;
   display: flex;
+  height: 50px;
   justify-content: center;
   align-items: center;
   font-size: medium;
@@ -105,14 +139,40 @@ body {
   align-items: center;
   background-color: aliceblue;
 }
-
+.emptyparent {
+  font-size: 24px;
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+.emptypage {
+  color: white;
+  text-align: center;
+}
 .moreinfo img {
   margin-top: 20px;
   width: 50%;
   height: 70%;
   mix-blend-mode: multiply;
 }
-
+.emptyparent {
+  position: absolute;
+  width: 90%;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emptypage {
+  background-color: #899096;
+  height: 150px;
+  width: 500px;
+  padding-top: 10px;
+  border-radius: 10px;
+  border: black 1px dotted;
+}
 .child {
   position: absolute;
   margin-top: 20%;
@@ -128,25 +188,61 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.description{
+.notfound {
+  position: absolute;
+  width: 100%;
+  direction: rtl;
+  margin-top: 100px;
+  right: 50px;
+}
+.notfound h1{
+  color:#ccd0dd;
+}
+.description {
   text-align: center;
 }
+.spinnerparent {
+  width: 100%;
+  height: 100%;
+}
+.grow {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+}
 
-@media only screen and (max-width: 700px) {
+@keyframes nextPage {
+  0% {
+    opacity: 0;
+    transform: translate(10em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes prevPage {
+  0% {
+    opacity: 0;
+    transform: translate(-10em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
   .pedar {
-    margin-top: 50px;
     width: 100%;
-    background-color: rgb(11, 1, 70) !important;
-    padding: 10px;
     align-items: center;
     justify-items: center;
-    display: grid;
-    column-gap: 50px;
-    grid-template-columns: auto auto auto;
-    background-color: #2196f3;
-    padding: 10px;
+    margin-top: 10%;
     position: absolute;
+    height: 100%;
   }
   .item-kharid {
     background-color: rgba(255, 255, 255, 0.8);
@@ -157,10 +253,14 @@ body {
     height: 430px;
     overflow-x: hidden;
     border-radius: 10px;
-    position: relative;
+  }
+  .item-kharid img {
+    width: 100px;
+    height: 210px;
   }
   .item-kharid span {
     font-size: small;
+    width: 100%;
     color: rgb(9, 55, 70);
   }
   .btns Button {
@@ -168,6 +268,9 @@ body {
   }
   .pagination {
     bottom: -5px;
+  }
+  .btns {
+    top: 500px;
   }
 }
 

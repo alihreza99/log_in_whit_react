@@ -6,10 +6,13 @@
   position: absolute;
   margin-left: 30%;
 }
+
 .Log_form p {
   color: red;
 }
-
+.errortext{
+  direction: rtl;
+}
 .form-control input {
   width: 50%;
   margin-left: 20%;
@@ -23,17 +26,18 @@
   background: #1f616d;
   color: azure;
 }
-.check {
-  margin-left: 2%;
+#check{
+  margin-left: 90%;
 }
-
 .log-button {
   border: none;
   border-radius: 5px;
   background-color: #1f616d;
   color: whitesmoke;
   height: 50px;
-  width: 70px;
+  width: 20%;
+  direction: rtl;
+  margin-left: 40%;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

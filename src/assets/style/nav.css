@@ -1,3 +1,11 @@
+.navparent {
+  direction: rtl;
+  width: 100%;
+}
+.me-auto {
+  direction: rtl;
+  margin-left: 5%;
+}
 .navlink {
   display: inline-block;
 }
@@ -14,7 +22,8 @@
   width: 100%;
 }
 
-i:hover{
+i:hover {
   transition-duration: 0.5s;
   font-size: larger;
 }
+

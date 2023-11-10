@@ -10,12 +10,12 @@ export default function App() {
       data-bs-theme="dark"
       style={{ width: "100%", display: "flex", position: "absolute" }}
     >
-      <Container>
-        <Navbar.Brand>Links</Navbar.Brand>
+      <Container className="navparent">
+        <Navbar.Brand>فروشگاه آنلاین</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link className="navlink">
             <Link style={{ color: "white", textDecoration: "none" }} to={"/"}>
-              Home
+              خانه
             </Link>
           </Nav.Link>
           <Nav.Link className="navlink">
@@ -23,7 +23,7 @@ export default function App() {
               style={{ color: "white", textDecoration: "none" }}
               to={"/log"}
             >
-              Log In
+              ورود
             </Link>
           </Nav.Link>
           <Nav.Link className="navlink">
@@ -31,7 +31,7 @@ export default function App() {
               style={{ color: "white", textDecoration: "none" }}
               to={"/kharid"}
             >
-              list kala
+              فروشگاه
             </Link>
           </Nav.Link>
         </Nav>

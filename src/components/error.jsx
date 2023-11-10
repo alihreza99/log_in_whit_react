@@ -1,19 +1,19 @@
 import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
-    <div className="notfount">
-      <h1>Oops! You seem to be lost.</h1>
-      <p>Here are some helpful links:</p>
+    <div className="notfound">
+      <h1>به نظر گم شده اید.</h1>
+      <p>چند لینم برای کمک به شما:</p>
       <Link className="link" to="/">
-        Home
+        خانه
       </Link>
       <br />
       <Link className="link" to="/log">
-        Blog
+        ورود
       </Link>
       <br/>
-      <Link className="link" to="/kharid">
-        list kala
+      <Link className="link" to="/shop">
+        فروشگاه
       </Link>
     </div>
   );

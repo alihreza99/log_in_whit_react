@@ -17,6 +17,11 @@ export default function Kala() {
 
   return (
     <>
+      {listShop == 0 && (
+        <div className="emptyparent">
+          <h1 className="emptypage">هیج ایتمی خریداری نشده</h1>
+        </div>
+      )}
       <div className="pedar">
         {content?.map((data, index) => {
           if (listShop?.includes(data.id.toString())) {
@@ -31,14 +36,14 @@ export default function Kala() {
                   <br />
                   <span className="category">{data.category}</span>
                   <br />
-                  <span className="price">price = ${data.price}</span>
+                  <span className="price">قیمت = ${data.price}</span>
                   <br />
                   <div className="btns">
                     <Link
                       className="link"
                       to={{ pathname: `/view/${data.id}`, state: data }}
                     >
-                      More info
+                      اطلاعات بیشتر
                     </Link>
                   </div>
                 </div>

@@ -5,13 +5,13 @@ import { Form } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
 const schema = yup.object().shape({
-  firstname: yup.string().required("Please enter a your first name"),
-  lastname: yup.string().required("Please enter a your last name"),
-  county: yup.string().required("Please enter a your county"),
-  phonenumber: yup.number().required("Please enter a your phone numer"),
-  personalid: yup.number().required("Please enter a your personal id"),
-  email: yup.string().email().required("please enter email"),
-  radio: yup.string().required("choose your gender"),
+  firstname: yup.string().required("لطفا نام خود را وارد کنید"),
+  lastname: yup.string().required("لطفا نام خانوادگی خود را وارد کنید"),
+  county: yup.string().required("لطفا شهر خود را وارد کنید"),
+  phonenumber: yup.string().required("لطفا شماره تلفن خود را وارد کنید"),
+  personalid: yup.string().required("لطفا کد ملی خود را وارد کنید"),
+  email: yup.string().email().required("لطفا ایمیل خود را وارد کنید"),
+  radio: yup.string().required("جنسیت خود را انتخاب کنید"),
 });
 
 const App = () => {
@@ -47,84 +47,80 @@ const App = () => {
       <div className="Log_form">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
-            <label>
-              First name<sup>*</sup>
+            <label className="label">
+              نام<sup>*</sup>
             </label>
-            <input
-              {...register("firstname")}
-              placeholder="firstname"
-              type="text"
-            />
-            <p>{errors.firstname?.message}</p>
+            <input {...register("firstname")} placeholder="نام" type="text" />
+            <p className="errortext">{errors.firstname?.message}</p>
           </div>
           <div className="form-control">
             <label>
-              Last name<sup>*</sup>
+              نام خانوادگی<sup>*</sup>
             </label>
             <input
               {...register("lastname")}
-              placeholder="lastname"
+              placeholder="نام خانوادگی"
               type="text"
             />
-            <p>{errors.lastname?.message}</p>
+            <p className="errortext">{errors.lastname?.message}</p>
           </div>
           <div className="form-control">
             <label>
-              County<sup>*</sup>
+              شهر<sup>*</sup>
             </label>
-            <input {...register("county")} placeholder="county" type="text" />
-            <p>{errors.county?.message}</p>
+            <input {...register("county")} placeholder="شهر" type="text" />
+            <p className="errortext">{errors.county?.message}</p>
           </div>
           <div className="form-control">
             <label>
-              Phone number<sup>*</sup>
+              شماره تلفن<sup>*</sup>
             </label>
             <input
               {...register("phonenumber")}
-              placeholder="phonenumber"
+              placeholder="شماره تلفن"
               type="number"
             />
-            <p>{errors.phonenumber?.message}</p>
+            <p className="errortext">{errors.phonenumber?.message}</p>
           </div>
           <div className="form-control">
             <label>
-              Personal id<sup>*</sup>
+              کد ملی<sup>*</sup>
             </label>
             <input
               {...register("personalid")}
-              placeholder="personalid"
+              placeholder="کد ملی"
               type="number"
             />
-            <p>{errors.personalid?.message}</p>
+            <p className="errortext">{errors.personalid?.message}</p>
           </div>
           <div className="form-control">
             <label>
-              Email<sup>*</sup>
+              ایمیل<sup>*</sup>
             </label>
-            <input {...register("email")} placeholder="email" type="email" />
-            <p>{errors.email?.message}</p>
+            <input {...register("email")} placeholder="ایمیل" type="email" />
+            <p className="errortext">{errors.email?.message}</p>
           </div>
-          <div key={`default-radio`} className="mb-3 radio-parent">
+          <div key={`default-radio`} id="check" className="mb-3 radio-parent">
             <Form.Check
               type="radio"
               id={`default-$radio`}
-              label={"Male"}
+              label={"مرد"}
               {...register("radio")}
               value="A"
             />
             <Form.Check
               type="radio"
               id={"Female"}
-              label={"Female"}
+              label={"زن"}
               {...register("radio")}
               value="B"
             />
-            <p>{errors.radio?.message}</p>
+            <p className="errortext">{errors.radio?.message}</p>
           </div>
           <div className="form-control">
             <label></label>
             <button className="log-button" type="submit">
-              Login
+              ورود
             </button>
           </div>
         </form>
